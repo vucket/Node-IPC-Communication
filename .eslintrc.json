@@ -1,0 +1,12 @@
+{
+  "extends": ["airbnb-base", "prettier"],
+  "env": {
+    "es6": true
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "no-plusplus": "off",
+    "arrow-body-style": ["error", "always"],
+    "global-require": 0
+  }
+}
