@@ -4,11 +4,12 @@
   "description": "Simulation of a device. Works as a server.",
   "scripts": {
     "start-server": "babel-node server.js",
-    "start-client": "babel-node client.js"
+    "start-client": "babel-node client_cli.js"
   },
   "author": "Sergio Valderrama",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "inquirer": "^7.0.0",
     "node-ipc": "^9.1.1"
   },
   "devDependencies": {
