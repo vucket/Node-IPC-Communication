@@ -13,8 +13,7 @@ IPC.config.encoding = 'ascii';
 IPC.config.stopRetrying = true;
 
 class ClientIPC {
-  constructor(id = null) {
-    this.id = id;
+  constructor() {
     this.isConnected = false;
     this.hasStarted = false;
     this.callback = null;
