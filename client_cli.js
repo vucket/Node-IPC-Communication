@@ -75,7 +75,7 @@ const inquirerSetData = () => {
         if (!Number.isNaN(parseFloat(value))) {
           return true;
         }
-        return 'Please enter a valid phone number';
+        return 'Please enter a valid number';
       }
     })
     .then(ans => {
