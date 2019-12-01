@@ -1,5 +1,5 @@
 import IPC from 'node-ipc';
-import { parseMessage, decodeMessage } from './utils/messageParser';
+import { encodeMessage, decodeMessage } from './utils/messageParser';
 import Device from './Device';
 
 require('dotenv').config();
@@ -14,7 +14,7 @@ const delay = ms => {
 
 const sendData = async socket => {
   await delay(Math.floor(Math.random() * 2000) + 1000);
-  IPC.server.emit(socket, parseMessage(myDevice.getData()));
+  IPC.server.emit(socket, encodeMessage(myDevice.getData()));
 };
 
 IPC.config.id = process.env.SERVER_ID;
@@ -48,7 +48,7 @@ IPC.serve(() => {
         console.log(`Valid command`);
         console.log(`Setting device data...`);
         myDevice.setDataValue(args);
-        IPC.server.emit(socket, parseMessage(myDevice.getData()));
+        IPC.server.emit(socket, encodeMessage(myDevice.getData()));
         break;
       default:
         console.log(`Unknown command`);

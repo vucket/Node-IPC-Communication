@@ -1,5 +1,5 @@
 import IPC from 'node-ipc';
-import { parseMessage, decodeMessage } from './utils/messageParser';
+import { encodeMessage, decodeMessage } from './utils/messageParser';
 
 require('dotenv').config();
 
@@ -86,7 +86,7 @@ class ClientIPC {
       this.executeCallback();
       return;
     }
-    IPC.of[serverId].emit(parseMessage(`get`));
+    IPC.of[serverId].emit(encodeMessage(`get`));
   }
 
   setDeviceData(data, cb = null) {
@@ -96,7 +96,7 @@ class ClientIPC {
       this.executeCallback();
       return;
     }
-    IPC.of[serverId].emit(parseMessage(`set ${data}`));
+    IPC.of[serverId].emit(encodeMessage(`set ${data}`));
   }
 }
 export default ClientIPC;
