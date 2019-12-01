@@ -62,7 +62,7 @@ class ClientIPC {
       IPC.of[serverId].on('data', data => {
         const decodedMsg = decodeMessage(data);
         console.log(
-          `Got a message from ${serverId}: original: ${data.inspect()} - decoded: ${decodedMsg}`
+          `Message from ${serverId}: original: ${data.inspect()} - decoded: ${decodedMsg}`
         );
         this.executeCallback();
       });

@@ -41,12 +41,12 @@ IPC.serve(() => {
     switch (command) {
       case 'get':
         console.log(`Valid command`);
-        console.log(`Getting device data`);
+        console.log(`Getting device data...`);
         sendData(socket);
         break;
       case 'set':
         console.log(`Valid command`);
-        console.log(`Setting device data`);
+        console.log(`Setting device data...`);
         myDevice.setDataValue(args);
         IPC.server.emit(socket, parseMessage(myDevice.getData()));
         break;

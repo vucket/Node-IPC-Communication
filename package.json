@@ -1,7 +1,7 @@
 {
-  "name": "labforwarddevice",
+  "name": "ipc_communication",
   "version": "1.0.0",
-  "description": "Simulation of a device. Works as a server.",
+  "description": "IPC communication between a device and a client",
   "scripts": {
     "start-server": "babel-node server.js",
     "start-client": "babel-node client_cli.js"
